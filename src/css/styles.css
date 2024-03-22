@@ -5,8 +5,6 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -23,6 +21,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+
+
+
 
 
 /* =======LOADER======= */
@@ -42,8 +44,8 @@
 }
 
 .loader:after {
-  box-shadow: 0 2px 0 #FF3D00 inset;
-  animation: rotate 2s linear infinite;
+  box-shadow: 0 4px 0 #04ff00 inset;
+  animation: rotate 1.5s linear infinite;
 }
 
 @keyframes rotate {
@@ -56,5 +58,13 @@
   }
 }
 
+.loaded_hiding .loader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .loader {
+  display: none;
+}
 
 /* ======/LOADER======= */
