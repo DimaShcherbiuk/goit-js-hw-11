@@ -4,12 +4,15 @@ import { getImagesGallery } from './js/pixabay-api';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+// import css from 'file.css';
+
 export let imageSearch;
 export let imageSet;
 
 export const setGallery = document.querySelector('.gallery');
-const inputDiscript = document.querySelector('input');
-const searchBtn = document.querySelector('button');
+const form = document.querySelector('.form');
+// const inputDiscript = document.querySelector('input');
+// const searchBtn = document.querySelector('button');
 const loader = document.querySelector('.loader');
 
 const showLoader = () => {
@@ -25,13 +28,14 @@ const handleLoad = () => {
 
 window.onload = handleLoad;
 
-searchBtn.addEventListener('click', async e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
-  imageSearch = inputDiscript.value.trim();
+  setGallery.innerHTML = '';
+  imageSearch = e.target.elements.search.value.trim();
   if (!imageSearch.length) {
     iziToast.error({
       color: '#fff021',
-      message: ` Please fill in the field for search query.`,
+      message: `Please fill in the field for search query.`,
       position: 'topRight',
     });
     setGallery.innerHTML = '';
@@ -55,7 +59,6 @@ searchBtn.addEventListener('click', async e => {
     iziToast.error({
       color: '#EF4040',
       messageColor: '#ffffff',
-
       message: `❌ Sorry, there was a mistake. Please try again!`,
       position: 'topRight',
     });
