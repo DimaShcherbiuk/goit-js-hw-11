@@ -30,7 +30,7 @@ searchBtn.addEventListener('click', async e => {
   imageSearch = inputDiscript.value.trim();
   if (!imageSearch.length) {
     iziToast.error({
-      color: 'yellow',
+      color: '#fff021',
       message: ` Please fill in the field for search query.`,
       position: 'topRight',
     });
@@ -43,7 +43,8 @@ searchBtn.addEventListener('click', async e => {
     imageSet = images.hits;
     if (!imageSet.length) {
       iziToast.error({
-        color: 'red',
+        color: '#EF4040',
+        messageColor: '#ffffff',
         message: `❌ Sorry, there are no images matching your search query. Please try again!`,
         position: 'topRight',
       });
@@ -52,8 +53,10 @@ searchBtn.addEventListener('click', async e => {
     renderFunction(images);
   } catch (error) {
     iziToast.error({
-      color: 'red',
-      message: `:x: Sorry, there was a mistake. Please try again!`,
+      color: '#EF4040',
+      messageColor: '#ffffff',
+
+      message: `❌ Sorry, there was a mistake. Please try again!`,
       position: 'topRight',
     });
   } finally {
