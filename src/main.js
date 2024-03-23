@@ -4,15 +4,12 @@ import { getImagesGallery } from './js/pixabay-api';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-// import css from 'file.css';
-
 export let imageSearch;
 export let imageSet;
 
 export const setGallery = document.querySelector('.gallery');
 const form = document.querySelector('.form');
-// const inputDiscript = document.querySelector('input');
-// const searchBtn = document.querySelector('button');
+
 const loader = document.querySelector('.loader');
 
 const showLoader = () => {
